@@ -10,10 +10,12 @@
             plane.board(Bob);
             while (true)
             {
+                altitude++;
                 plane.update();
 
                 plane.draw();
-
+                
+                Bob.update();
                 Thread.Sleep(100);
                 if (Console.KeyAvailable)
                 {
@@ -24,10 +26,12 @@
                     }
                     else if (key.Key == ConsoleKey.Spacebar)
                     {
-
+                        plane.pushpara(Bob);
+                        Bob.draw();
                     }
 
                 }
+                
             }
         } 
 

@@ -32,9 +32,9 @@
         {
             paras.Add(p);
         }
-        public void pushpara()
+        public void pushpara(Para p)
         {
-
+            paras.Remove(p);
         }
     }
 }

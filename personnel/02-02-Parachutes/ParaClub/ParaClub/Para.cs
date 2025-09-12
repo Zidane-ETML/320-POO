@@ -10,8 +10,8 @@ namespace ParaClub
     {
         private int _x;
         private bool paraopen;
-        private int altitude = 5;
-        private string[] withoutParachute =
+        public int altitude = 5;
+        public string[] withoutParachute =
         {
             @"     ",
             @"     ",
@@ -19,7 +19,7 @@ namespace ParaClub
             @"  o  ",
             @" /░\ ",
             @" / \ ",
-            };
+        };
 
         private string[] withParachute =
         {
@@ -35,7 +35,22 @@ namespace ParaClub
 
         public void update()
         {
-
+            if (altitude < Config.SCREEN_HEIGHT / 2)
+            {
+                paraopen = false;
+            }
+            else
+            {
+                paraopen = true;
+            }
+            if (paraopen == false)
+            {
+                for (int i = 0; altitude == Config.SCREEN_HEIGHT; i++)
+                {
+                    Console.SetCursorPosition(_x, altitude + i);
+                    Console.WriteLine(withoutParachute[i]);
+                }
+            }
         }
         public void draw()
         {
@@ -51,14 +66,10 @@ namespace ParaClub
             {
                 for (int i = 0; i < withoutParachute.Length; i++)
                 {
-                    Console.SetCursorPosition(X, altitude);
+                    Console.SetCursorPosition(X , altitude);
                     Console.WriteLine(withoutParachute[i]);
                 }
             }
-
-        }
-        public void pushpara()
-        {
 
         }
 

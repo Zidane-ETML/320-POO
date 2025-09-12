@@ -1,3 +1,5 @@
+using Drones.View;
+
 namespace Drones
 {
     internal static class Program
@@ -21,10 +23,16 @@ namespace Drones
                 Drone drone = new Drone(i * 10, i * 100, namei);
                 fleet.Add(drone);
             }
-            
+            // Création du voisinage de batiments
+            List<Building> neighbourhood = new List<Building>();
+            for (int i = 0;i < 5;i++) 
+            {
+                Building building = new Building();
+                neighbourhood.Add(building);
+            }
 
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, neighbourhood));
         }
     }
 }

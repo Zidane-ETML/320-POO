@@ -27,10 +27,15 @@ namespace Drones
             List<Building> neighbourhood = new List<Building>();
             for (int i = 0;i < 5;i++) 
             {
-                Building building = new Building();
+                Building building = new();
                 neighbourhood.Add(building);
+                Factory factory = new Factory();
+                neighbourhood.Add(factory);
+                Console.WriteLine ($"{factory.PowerConsumption}Kwh");
+                Store store = new Store();
+                neighbourhood.Add(store);
+                Console.WriteLine(store.OpeningHours);
             }
-
             // Démarrage
             Application.Run(new AirSpace(fleet, neighbourhood));
         }

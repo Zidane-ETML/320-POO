@@ -8,13 +8,17 @@ namespace Drones.View
 {
     public class Building
     {
-        private int _x = Helpers.RandomHelpers.alea.Next(3, AirSpace.WIDTH);
-        private int _y = Helpers.RandomHelpers.alea.Next(3, AirSpace.HEIGHT);
-        private int large = Helpers.RandomHelpers.alea.Next(40, 65);
-        private int deep = Helpers.RandomHelpers.alea.Next(40, 65);
-        private Pen buildingBrush = new Pen(new SolidBrush(Color.Black), 3);
+        protected int _x = Helpers.RandomHelpers.alea.Next(3, AirSpace.WIDTH);
+        protected int _y = Helpers.RandomHelpers.alea.Next(3, AirSpace.HEIGHT);
+        protected int large = Helpers.RandomHelpers.alea.Next(40, 65);
+        protected int deep = Helpers.RandomHelpers.alea.Next(40, 65);
+        protected Pen buildingBrush = new Pen(new SolidBrush(Color.Black), 3);
 
-        
+        public Building()
+        {
+            
+        }
+
         public void Render(BufferedGraphics drawingSpace)
         {
             drawingSpace.Graphics.DrawRectangle(buildingBrush, new Rectangle(_x, _y, large, deep));
